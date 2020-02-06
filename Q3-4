@@ -50,7 +50,7 @@ def overlap_all_pairs(myreads, k=30, km=3):
     olaps_list = {}
     kmer_dic, key_list, val_list = getkmerDic(myreads, km)    
     for i in range(len(myreads)):
-        kmer_suffix = reads[i][-k:]
+        kmer_suffix = myreads[i][-k:]
         start = 0
         for j in range(start, len(key_list)):
             if key_list[j] in kmer_suffix:

@@ -1,7 +1,16 @@
+import Bio
 
-kmer = 4
-reads = ['actctcattg','acttttcaacattgactc']
-reads = ['ACGGATGATCGATCAAGT', 'GATCAAGTATCCGAAGCT', 'TTCACGGAGATCAAGT']
+
+kmer = 30
+#reads = ['actctcattg','acttttcaacattgactc']
+#reads = ['ACGGATGATCGATCAAGT', 'GATCAAGTATCCGAAGCT', 'TTCACGGAGATCAAGT']
+file_path = 'c:/tmp/ERR266411_1.for_asm.fastq'
+from Bio import SeqIO
+records = list(SeqIO.parse(file_path, "fastq"))
+
+reads = []
+for rec in records:
+    reads.append(str(rec.seq))
 
 #build dictionary for kmer to reads
 def BuildIndex(reads,kmer):

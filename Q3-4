@@ -61,4 +61,5 @@ def overlap_all_pairs(myreads, k=30, km=3):
 
 reads = ['ACGGATGATCGATCAAGT', 'GATCAAGTATCCGAAGCT', 'TTCACGGAGATCAAGT']
 test = overlap_all_pairs(reads, 6, 3)
-print(test)
+overlaps = overlap_all_pairs(phi_reads, 30, 3)
+len(overlaps)
